@@ -12,11 +12,27 @@ const LEVEL_LENGTH = 10000;
 const LEVEL_WIDTH = 10;
 
 let MOVEMENT = 0;
-let PAUSED = true;
+let PAUSED = false;
 let SPEED = 0.1;
 const OBSTACLES = [];
 
 const bindKeyboard = () => {
+  window.addEventListener('deviceorientation', e => {
+    const threshhold = 25;
+    if (e.gamma < -threshhold) {
+      MOVEMENT = -1;
+    } else if (e.gamma > threshhold) {
+      MOVEMENT = 1;
+    } else {
+      MOVEMENT = 0;
+    }
+  });
+  window.addEventListener('orientationchange', function(e) {
+    PAUSED = true;
+  });
+  window.addEventListener('touchend', e => {
+    PAUSED = !PAUSED;
+  });
   window.addEventListener('keydown', e => {
     if (e.code === 'KeyA' || e.code === 'ArrowLeft') {
       MOVEMENT = -1;

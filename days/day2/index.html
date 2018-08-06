@@ -141,7 +141,17 @@
       <div class="circle test"></div>
       <div style="clear: both; margin-top: 50px;"></div>
       <svg viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" class="text test">
-        <text x="0" y="80" class="path" fill="#000000" fill-opacity="0.0" stroke="#585467" stroke-width="2">
+        <linearGradient id="lg" x1="0.5" y1="1" x2="0.5" y2="0">
+          <stop offset="0%" stop-opacity="1" stop-color="royalblue"/>
+          <stop offset="40%" stop-opacity="1" stop-color="royalblue">
+            <animate attributeName="offset" values="0;1;0" repeatCount="indefinite" dur="10s" begin="0s"/>
+          </stop>
+          <stop offset="40%" stop-opacity="0" stop-color="royalblue">
+            <animate attributeName="offset" values="0;1;0" repeatCount="indefinite" dur="10s"  begin="0s"/>
+          </stop>
+          <stop offset="100%" stop-opacity="0" stop-color="royalblue"/>
+        </linearGradient>
+        <text x="0" y="80" class="path" fill="url(#lg)" fill-opacity="0.8" stroke="#585467" stroke-width="2">
           ᛖᛚᛁᛊᚢᛒᛖᚦ ᚹᚱᚨᛖᛏ
         </text>
         <text x="0" y="180" class="path" fill="#FFFFFF" fill-opacity="0.2" stroke="#d4c7ff" stroke-width="2">

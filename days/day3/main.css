@@ -1,0 +1,93 @@
+:root {
+  --main-bg-color: #000412;
+  --secondary-bg-color: #5E7D99;
+  --main-text-color: #8FA3C1;
+  --secondary-text-color: #001531;
+  --fifth-color: #000000;
+}
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  color: var(--main-text-color);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5em;
+  background: #0F2027;
+  background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color));
+}
+header {
+
+}
+h1 {
+  font-weight: 300;
+  font-size: 5em;
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+h2 {
+  text-transform: uppercase;
+  text-decoration: underline;
+}
+h3 {
+
+}
+section {
+  padding: 2vh 10vh;
+}
+select {
+  border: none;
+  border-radius: 0.25em;
+  background-color: var(--secondary-text-color);
+  color:  var(--fifth-color);
+  padding: 15px 32px;
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+button {
+  border: none;
+  border-radius: 0.25em;
+  background-color: var(--secondary-text-color);
+  color: var(--fifth-color);
+  padding: 15px 32px;
+  margin: 1em;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+footer {
+  padding: 4vh 40vh;
+}
+a {
+  color: var(--main-text-color);
+}
+aside {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 200px;
+  border: 5px solid black;
+  border-radius: 0em 0em 1em 1em;
+}
+aside div {
+  width: 100%;
+  height: 200px;
+}
+aside div:first-child {
+  background-color: var(--main-bg-color);
+}
+aside div:nth-child(2) {
+  background-color: var(--secondary-bg-color);
+}
+aside div:nth-child(3) {
+  background-color: var(--main-text-color);
+}
+aside div:nth-child(4) {
+  background-color: var(--secondary-text-color);
+}
+aside div:nth-child(5) {
+  background-color: var(--fifth-color);
+}

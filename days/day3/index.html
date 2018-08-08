@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Color Schema</title>
+    <meta name="description" content="An interactive film...">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,shrink-to-fit=no">
+    <link href="favicon.ico" rel="icon" type="image/x-icon">
+    <!-- OG -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="...">
+    <meta property="og:description" content="An interactive film...">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <!-- /OG -->
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:url" content="">
+    <meta name="twitter:title" content="...">
+    <meta name="twitter:description" content="An interactive film...">
+    <meta name="twitter:image" content="">
+    <!-- /Twitter -->
+    <!-- Chrome for Android -->
+    <meta name="theme-color" content="#000000">
+    <!-- /Chrome for Android -->
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="main.css">
+    <!-- /Stylesheets -->
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Lato:300');
+    </style>
+
+  </head>
+  <body>
+    <header>
+      <h1>The Frozen Trail</h1>
+      <h2>Part 1</h2>
+      <h3>...Of Wolves and the Raven</h3>
+    </header>
+    <aside>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </aside>
+    <section>
+      <button>Start your journey</button>
+      <br />
+      <select id="change-theme">
+      </select>
+    </section>
+    <footer>
+      -- <a href="http://karkk.ai//nen/hannu">Hannu</a>
+    </footer>
+<script>
+const THEMES = {
+  Frostpunk: ['#6E7783', '#77AAAD', '#D8E6E7', '#9DC3C1', '#00040D'],
+  Depths: ['#366873', '#7A8D8F', '#ACC5DE', '#011526', '#ACC5DE'], // #00040D
+  'Icy Dusk': ['#233142', '#AF4034', '#C65146', '#EC6A5C', '#0B111A'],
+  Frozen: ['#1C1D21', '#92CDCF', '#EEEFF7', '#31353D ', '#EEEFF7'] // #445878
+};
+
+const elem = document.querySelector('#change-theme');
+for (theme in THEMES) {
+  const option = document.createElement('option');
+  option.text = theme;
+  elem.add(option);
+}
+
+function setTheme(theme) {
+  const root = document.querySelector(':root');
+  root.style.setProperty('--main-bg-color', theme[0]);
+  root.style.setProperty('--secondary-bg-color', theme[1]);
+  root.style.setProperty('--main-text-color', theme[2]);
+  root.style.setProperty('--secondary-text-color', theme[3]);
+  root.style.setProperty('--fifth-color', theme[4] || 'rgba(0,0,0,1.0)');
+}
+setTheme(THEMES['Frostpunk']);
+
+elem.addEventListener('change', event => {
+  const theme = THEMES[event.target.value];
+  setTheme(theme);
+});
+</script>
+  </body>
+</html>

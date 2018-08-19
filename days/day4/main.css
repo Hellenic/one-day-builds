@@ -1,0 +1,33 @@
+:root {
+  --main-bg-color: #366873;
+  --secondary-bg-color: #7A8D8F;
+  --main-text-color: #ACC5DE;
+
+  /* Depths: ['#366873', '#7A8D8F', '#ACC5DE', '#011526', '#ACC5DE'] */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  color: var(--main-text-color);
+  font-family: 'Lato', sans-serif;
+  font-size: 1.0em;
+  background: #0F2027;
+  background: linear-gradient(to bottom, var(--main-bg-color), var(--secondary-bg-color));
+}
+
+canvas {
+  width: 100%;
+  height: 100%
+}
+
+header {
+  position:
+  absolute;
+  top: 2%;
+  left: 5%;
+  color: white;
+}
